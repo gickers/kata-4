@@ -1,10 +1,22 @@
-/** Adds two given numbers, returning the sum.
- * @param {number} a
- * @param {number} b
- * @returns {number} the sum of a and b
+/** Partition an array into two arrays splitting odd and even.
+ * partitionOddEven - 
+ * @param {array[]} 
+ * @returns {oddArray[],evenArray[]} 
  */
-function sum(a, b) {
-    return a + b;
+const partitionOddEven = (array) => {
+      let oddArray = []
+    let evenArray = []
+    const result = [oddArray,evenArray];
+    for (let i=0; i<array.length; i++ ){
+        if (array[i] % 2 === 0 ){
+            evenArray.push(array[i])
+        }else {
+            oddArray.push(array[i])
+        }
+    }
+    return result;  
 }
 
-export { sum };
+console.log(partitionOddEven([11,13,15,16,20,22]))
+
+export { partitionOddEven };
